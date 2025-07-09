@@ -3,13 +3,14 @@ import http from 'node:http'
 const PORT = 8000
 
 
-const server = http.createServer((req, res) => {
-    /*
-    Challenge: 
-    1. Check the ‘method’ property on the req object.
-       Only serve our string if it’s ‘GET’.
-    */
+const animal = {
+    type: 'elephant',
+    nickName: 'Elon Tusk'
+}
 
+console.log(JSON.stringify(animal))
+
+const server = http.createServer((req, res) => {
 
     if (req.url === '/api' && req.method === 'GET') {
         res.end('This is from the server')
